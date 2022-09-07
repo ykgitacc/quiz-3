@@ -1,0 +1,15 @@
+WAQ to display employee name with city they are working into
+
+
+		select e.first_name as employee_name,
+		b.city as city from employees
+		e inner join emp_details_view b on e.employee.id = b.employee_id;
+
+WAQ to display employee who joined in the same month as charles
+
+		select first_name, to_char(hire_date,'mon')
+		from employees
+		where to_char(hire_date,'mon')like(select to_char (hire_date,'mon')
+		from employees
+		where first_name like 'charles');
+
